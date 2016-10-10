@@ -1,0 +1,40 @@
+<%= form_for @recipe do |f| %>
+<p>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</p>
+<p>
+  <%= f.label :image %>
+  <%= f.url_field :image %>
+</p>
+<p>
+  <%= f.label :video %>
+  <%= f.url_field :video %> (optional)
+</p>
+<p>
+  <%= f.label :servings %>
+  <%= f.text_field :servings %>
+</p>
+<p>
+  <%= f.label :preparation_time %>
+  <%= f.text_field :preparation_time %> mins
+</p>
+<p>
+  <%= f.label :ingredients %>
+  <%= f.text_field :ingredients %>
+</p>
+<p>
+  <%= f.label :method %>
+  <%= f.text_field :method %>
+</p>
+<p>
+  <%= f.label :tips %>
+  <%= f.text_field :tips %>
+</p>
+<p>
+  <%= f.label :category_id %>
+  <%= f.select :category_id, Category.pluck( :recipe_type, :id), :prompt => 'Select Category' %>
+</p>
+
+<%= f.submit %>
+<% end %>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Paleolife</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+    <div>
+    <nav>
+    <%= link_to 'Home', root_path %>
+  </nav>
+</div>
+  <div style="float:right;">
+  <% if @current_user.present? %>
+  <%= "You are logged in as #{@current_user.email}." %>
+    <%= link_to "log out", login_path, :method => 'delete'%>
+  <% else %>
+  <%= link_to 'Register', new_user_path %>
+  <%= link_to 'Log In', login_path %>
+   <% end %>
+ </div>
+ <nav>
+   <%= link_to 'All Recipes', recipes_path,  :class =>'link'  %>
+ </nav>
+<%= yield %>
+  </div>
+</body>
+</html>
