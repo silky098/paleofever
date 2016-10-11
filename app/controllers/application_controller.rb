@@ -13,4 +13,11 @@ def fetch_user
     session[:user_id] = nil unless @current_user.present?
   end
 
+
+  def check_for_user
+    flash[:message] = 'Please login in order to create a recipe'
+    redirect_to login_path unless @current_user.present?
+  end
+
+
 end

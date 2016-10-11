@@ -13,16 +13,15 @@ Rails.application.routes.draw do
   get 'categories/index'
 
   root :to => 'pages#home'
+
+  resources :recipes
   resources :users, :only => [:new, :create]
 
     get '/login' => 'session#new'
     post '/login' => 'session#create'
     delete '/login' => 'session#destroy'
 
-
-  get '/recipes' => 'recipes#index'
-  get 'recipes/new' => 'recipes#new'
-
   get 'categories' => 'categories#index'
-  
+
+
 end

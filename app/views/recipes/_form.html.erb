@@ -1,11 +1,12 @@
-<%= form_for @recipe do |f| %>
+<%= form_for(@recipe, :html => {:multipart => true}) do |f| %>
+
 <p>
   <%= f.label :name %>
   <%= f.text_field :name %>
 </p>
 <p>
   <%= f.label :image %>
-  <%= f.url_field :image %>
+  <%= f.cl_image_upload :image %>
 </p>
 <p>
   <%= f.label :video %>

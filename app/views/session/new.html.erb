@@ -1,5 +1,8 @@
 <h1>New User</h1>
-<p>Find me in app/views/session/new.html.erb</p>
+
+<% if flash[:message].present? %>
+  <p><%= flash[:message] %></p>
+<% end %>
 
 <%= form_tag login_path do %>
 <%= label_tag :email %>

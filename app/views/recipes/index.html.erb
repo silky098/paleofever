@@ -1,12 +1,14 @@
 <h1>Recipe Index</h1>
 <p>Find me in app/views/recipes/index.html.erb</p>
 
+<nav>
+    <%= link_to 'Add New Recipe', new_recipe_path,  :class =>'link'  %>
+</nav>
 
 <% @recipes.each do |recipe| %>
 <ul>
-  <li><%= link_to recipe.name %></li>
+  <li><%= link_to recipe.name, recipe_path( recipe.id ) %></li>
   <li><%= image_tag recipe.image, :class =>'thumb' %></li>
-  <li><%= video_tag recipe.video %> (<%= recipe.video %>)</li>
   <li>Serves - <%= recipe.servings %></li>
   <li>Preparation Time - <%= recipe.preparation_time %> mins</li>
 </ul>
