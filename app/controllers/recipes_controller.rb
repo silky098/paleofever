@@ -3,6 +3,7 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.all
+    @categories = Category.all
   end
 
   def new
@@ -28,6 +29,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find params[:id]
+    @categories = Category.all
   end
 
   def update

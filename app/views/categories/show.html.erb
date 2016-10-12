@@ -1,0 +1,8 @@
+<h1><%= @category.recipe_type %></h1>
+
+<%= render :partial => 'categories' %>
+
+<% @recipes.each do |recipe| %>
+<hr>
+  <p><%= link_to recipe.name, recipe_path( recipe.id ) %> <%= cl_image_tag recipe.image, :class =>'thumb' %></p>
+<% end %>

@@ -21,7 +21,8 @@ Rails.application.routes.draw do
     post '/login' => 'session#create'
     delete '/login' => 'session#destroy'
 
-  get 'categories' => 'categories#index'
+  get '/categories' => 'categories#index'
+  get '/categories/:id' => 'categories#show', :as => 'categories_show'
 
 
 end
