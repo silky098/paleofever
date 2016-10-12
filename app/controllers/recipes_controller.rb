@@ -2,8 +2,13 @@ class RecipesController < ApplicationController
   before_action :check_for_user, :only => [:new, :edit, :update, :destroy]
 
   def index
-    @recipes = Recipe.all
     @categories = Category.all
+    @recipes = Recipe.all
+      if params[:search]
+        @recipes = Recipe.search(params[:search]).order("created_at DESC")
+      else
+        @recipes = Recipe.all.order('created_at DESC')
+      end
   end
 
   def new
@@ -30,6 +35,7 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find params[:id]
     @categories = Category.all
+  #  @current_user = User.find_by :id => session[:user_id]
   end
 
   def update

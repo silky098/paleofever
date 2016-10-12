@@ -1,41 +1,37 @@
 <%= form_for(@recipe, :html => {:multipart => true}) do |f| %>
 
-<p>
+<div class="form-group">
   <%= f.label :name %>
-  <%= f.text_field :name %>
-</p>
-<p>
+  <%= f.text_field :name, :class => 'form-control' %>
+</div>
+<div class="form-group">
   <%= f.label :image %>
-  <%= f.cl_image_upload :image %>
-</p>
-<p>
-  <%= f.label :video %>
-  <%= f.url_field :video %> (optional)
-</p>
-<p>
+  <%= f.cl_image_upload :image, :class => 'form-control' %>
+</div>
+<div class="form-group">
   <%= f.label :servings %>
-  <%= f.text_field :servings %>
-</p>
-<p>
+  <%= f.text_field :servings, :class => 'form-control' %>
+</div>
+<div class="form-group">
   <%= f.label :preparation_time %>
-  <%= f.text_field :preparation_time %> mins
-</p>
-<p>
+  <%= f.text_field :preparation_time, :class => 'form-control' %> mins
+</div>
+<div class="form-group">
   <%= f.label :ingredients %>
-  <%= f.text_field :ingredients %>
-</p>
-<p>
+  <%= f.text_field :ingredients, :class => 'form-control' %>
+</div>
+<div class="form-group">
   <%= f.label :method %>
-  <%= f.text_field :method %>
-</p>
-<p>
+  <%= f.text_field :method, :class => 'form-control' %>
+</div>
+<div class="form-group">
   <%= f.label :tips %>
-  <%= f.text_field :tips %>
-</p>
-<p>
+  <%= f.text_field :tips, :class => 'form-control' %>
+</div>
+<div class="dropdown">
   <%= f.label :category_id %>
-  <%= f.select :category_id, Category.pluck( :recipe_type, :id), :prompt => 'Select Category' %>
-</p>
+  <%= f.select :category_id, Category.pluck( :recipe_type, :id), :prompt => 'Select Category', :class => 'form-control' %>
+</div>
 
-<%= f.submit %>
+<%= f.submit "Create Recipe", :class => 'btn btn-default' %>
 <% end %>

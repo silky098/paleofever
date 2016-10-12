@@ -20,4 +20,10 @@
 class Recipe < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
+  has_many :favourites
+
+  def self.search(search)
+    where("name ILIKE ?", "%#{search}%")
+    where("ingredients ILIKE ?", "%#{search}%")
+  end
 end

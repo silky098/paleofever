@@ -1,7 +1,26 @@
-
+body {
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+// font-family: 'Slabo 27px', serif;
+// font-family: 'Open Sans', sans-serif;
+// font-family: 'Abhaya Libre', serif;
+// font-family: 'Maven Pro', sans-serif;
+// font-family: 'Arima Madurai', cursive;
+// font-family: 'Fredericka the Great', cursive;
+p {
+  font-size: 14px;
+}
 .thumb {
   width: 200px;
 }
 .full_image {
   max-width: 1000px;
+}
+
+p.category {
+  font-style: italic;
 }

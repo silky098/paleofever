@@ -10,12 +10,13 @@
 #
 
 Rails.application.routes.draw do
-  get 'categories/index'
+  
 
   root :to => 'pages#home'
 
   resources :recipes
   resources :users, :only => [:new, :create]
+  resources :favourites
 
     get '/login' => 'session#new'
     post '/login' => 'session#create'
