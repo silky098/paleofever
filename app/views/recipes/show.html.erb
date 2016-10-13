@@ -1,14 +1,14 @@
 <div class="body_heading_gap">
   <h1><%=@recipe.name%></h1>
 </div>
-<nav>
-    <%= link_to 'Add New Recipe', new_recipe_path,  :class =>'link'  %>  |
-    <%= link_to 'Update Recipe', edit_recipe_path,  :class =>'link'  %> |
-    <%= link_to 'Delete Recipe', recipe_path, :method => 'delete', :class =>'link'  %>
-</nav>
-<br />
-<p><%= render :partial => 'categories' %></p>
-<br />
+<div class="update_bar">
+<%= link_to 'Add New Recipe', new_recipe_path,  :class =>'link'  %>
+  |
+<%= link_to 'Update Recipe', edit_recipe_path,  :class =>'link'  %>
+  |
+<%= link_to 'Delete Recipe', recipe_path, :method => 'delete', :class =>'link'  %>
+</div>
+
 <div>
   <p>Serves - <%= @recipe.servings %> ~ Preparation Time - <%= @recipe.preparation_time %> mins</p>
   <p><%= cl_image_tag(@recipe.image, :class =>'full_image') %></p>

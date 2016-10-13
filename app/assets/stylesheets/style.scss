@@ -47,12 +47,35 @@ h1 {
 h2, h3, h4 {
   font-family: 'Arima Madurai', cursive;
 }
+.footer {
+  width: 100%;
+  display: block;
+}
+.catagory_pills{
+  text-transform: uppercase;
+  display: block;
+  float: none;
+  width: 100%;
+  margin: 35px auto;
+}
+.cat_pills{
+  background-color: #e9eaea;
+  margin: 10px;
+}
+.update_bar{
+  width: 100%;
+  margin: 25px auto;
+  font-family: 'Arima Madurai', cursive;
+  font-size: 16px;
+}
 .body_heading_gap {
   text-align: center;
   margin-bottom: 35px;
-
 }
-
+.recipe_index {
+  display: inline-block;
+  position: relative;
+}
 .thumb {
   width: 200px;
 }

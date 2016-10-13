@@ -67,7 +67,8 @@
             <li role="separator" class="divider"></li>
             <li><%= link_to 'All Categories', categories_path, :class => 'link' %></li>
           </ul>
-          <li><a href="#">link</a></li>
+          <li><%= link_to 'Add New Recipe', new_recipe_path,  :class =>'link'  %></li>
+          
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -79,6 +80,18 @@
 
 <footer>
   <div class="footer">
+    <div class="catagory_pills">
+      <ul class="nav nav-pills">
+      <li><%= link_to 'Beverages', categories_show_path(1), :role => 'presentation', :class => 'active cat_pills' %></li>
+      <li><%= link_to 'Canapes', categories_show_path(2), :role => 'presentation', :class => 'active cat_pills' %></li>
+      <li><%= link_to 'Breakfasts', categories_show_path(3), :role => 'presentation', :class => 'active cat_pills' %></li>
+      <li><%= link_to 'Entrees', categories_show_path(4), :role => 'presentation', :class => 'active cat_pills' %></li>
+      <li><%= link_to 'Mains', categories_show_path(5), :role => 'presentation', :class => 'active cat_pills' %></li>
+      <li><%= link_to 'Desserts', categories_show_path(6), :role => 'presentation', :class => 'active cat_pills' %></li>
+      <li><%= link_to 'Snacks', categories_show_path(7), :role => 'presentation', :class => 'active cat_pills' %></li>
+      <li><%= link_to 'All', categories_path, :role => 'presentation', :class => 'active cat_pills' %></li>
+      </ul>
+    </div>
   </div>
 </footer>
 </div>

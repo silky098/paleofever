@@ -1,5 +1,13 @@
 <div class="body_heading_gap">
   <h1>Update Your Recipe</h1>
 </div>
-
+<div>
+<%= link_to 'Add New Recipe', new_recipe_path,  :class =>'link'  %>
+  |
+<%= link_to 'Update Recipe', edit_recipe_path,  :class =>'link'  %>
+  |
+<%= link_to 'Delete Recipe', recipe_path, :method => 'delete', :class =>'link'  %>
+</div>
+<div>
 <%= render :partial => 'form' %>
+</div>
