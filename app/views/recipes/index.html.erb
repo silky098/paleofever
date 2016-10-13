@@ -1,21 +1,10 @@
-<h1>Recipe Index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
-
-  <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
-  <%= submit_tag "Search" %>
-    <% if @recipes.present? %>
-        <% @recipes.each do |recipe| %>
-          <%= link_to recipe.name, recipe_path( recipe.id ) %>
-        <% end %>
-    <% else %>
-        <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
-    <% end %>
-<% end %>
-
+<div class="body_heading_gap">
+  <h1>Recipe Index</h1>
+</div>
 <nav>
     <%= link_to 'Add New Recipe', new_recipe_path,  :class =>'link'  %>
 </nav>
+
 <p><%= render :partial => 'categories' %></p>
 
 <% @recipes.each do |recipe| %>

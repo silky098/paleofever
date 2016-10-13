@@ -53,17 +53,20 @@ end
     @recipe = Recipe.find params[:id]
     if params[:file].present?
       req = Cloudinary::Uploader.upload(params[:file])
+
       recipe.image = req["public_id"]
     end
     @recipe.update_attributes(recipe_params)
-    recipe.save
+    @recipe.save
     redirect_to recipe_path( @recipe.id )
   end
 
   def destroy
     recipe = Recipe.find params[:id]
+    if recipe.user.id == @current_user.id
     recipe.destroy
-    redirect_to recipes_path
+    end
+    redirect_to recipes_path  
   end
 
   private

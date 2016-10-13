@@ -1,4 +1,6 @@
-
+<div class="body_heading_gap">
+  <h1>Your Search Results</h1>
+</div>
 <% if @recipes.present? %>
   <% @recipes.each do |recipe| %>
   <div>
@@ -15,5 +17,6 @@
   </div>
   <% end %>
 <% else %>
-    <p>There are no posts containing the search term <%= params[:search] %>.</p>
+    <p style="text-align:center;">sorry, there are no posts containing <%= params[:search] %>.<br />
+    <img src="/assets/food_question.jpg" /></p>
 <% end %>

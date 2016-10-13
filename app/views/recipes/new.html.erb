@@ -1,10 +1,12 @@
-<h1>Add a New Recipe</h1>
-<p>Fill out this form to add a recipe</p>
+<div class="body_heading_gap">
+  <h1>Add a New Recipe</h1>
+</div>
+<p>please fill out all of the boxes with an *</p>
 
 <% unless flash[:error].nil? %>
  <div class="alert alert-danger">
      <%= flash[:error] %>
  </div>
- 
+
 <% end %>
 <%= render :partial => 'form' %>

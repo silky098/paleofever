@@ -1,17 +1,20 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.all.by_name
+    @categories = Category.all
   end
 
   def show
-   @category = Category.find params[:id]
-   @categories = Category.all  # for category list partial
+   @categories = Category.all
+   @category = Category.find params[:id] # for category list partial
    @recipes = Recipe.where :category_id => params[:id]
-  #  raise 'hell'
+
   end
 
   private
     def category_params
-      params.require(:category).permit(:category_id, :recipe_type)
+      params.require(:category).permit(:category_id, :recipe_type, :id)
+    end
+    def recipe_params
+      params.require(:recipe).permit(:category_id)
     end
 end

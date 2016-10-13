@@ -7,12 +7,23 @@
 //   height: 48px!important;
 // }
 .container {
-  margin-top: 10px;
+  padding-top: 10px;
+}
+.container-fluid {
+    background-color: #ddd;
+    color: #323232;
+}
+header {
+  background: rgba(243, 254, 255, 0.82);
+  padding: 5px 20px 0 20px;
+  width: 100%;
 }
 .main-logo {
+  margin-top: 20px;
     width: 100%;
     height: 110px;
     background: url('/assets/paleo-fever-logo.png') center no-repeat;
+    background-size: 330px;
 }
 body {
     font-family: 'Open Sans', sans-serif;
@@ -31,9 +42,15 @@ p {
 }
 h1 {
   font-family: 'Fredericka the Great', cursive;
+  font-size: 48px ;
 }
 h2, h3, h4 {
   font-family: 'Arima Madurai', cursive;
+}
+.body_heading_gap {
+  text-align: center;
+  margin-bottom: 35px;
+
 }
 
 .thumb {
@@ -48,14 +65,56 @@ p.category {
 }
 .search {
     float: right;
+    margin: 0 20px;
 }
 .btn-info {
     color: #fff;
     background-color: #15b211;
     border-color: #0c9108;
+    padding: 6px 13px 7px 12px;
 }
 .btn-info:hover {
     color: #fff;
     background-color: #0c9108;
     border-color: #0b8407;
 }
+a, a:active {
+    color: #0c9108;
+    text-decoration: none;
+}
+
+a:focus, a:hover {
+    color: #0b8407;
+    text-decoration: none;
+}
+a.link.active {
+  background: #d1f2ef;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: #d1f2ef;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: #333;
+    background-color: #bce7e3;
+}
+.home_img {
+  max-width: 100%;
+}
+.footer {
+  height: 100px;
+}
+// .cloudinary-fileupload {
+//    height: 30px;
+//    width: 100px;
+//    display: block;
+//    background: url('/assets/upload_button.png') center no-repeat;
+//    z-index: 99999;
+//   }
+//    input[type="file"] {
+//    display: block;
+//    width: 66px;
+//    height: 25px;
+//    background: url('/assets/upload_button.png') center no-repeat;
+//    z-index: 99999;
+// }

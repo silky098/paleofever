@@ -9,65 +9,78 @@
   <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre|Arima+Madurai|Fredericka+the+Great|Maven+Pro|Open+Sans|Slabo+27px" rel="stylesheet">
 </head>
 <body>
-  <div class="container" style="border:1px solid red;">
     <header>
-      <div style="float:right; border:1px solid blue;">
+      <div style="float:right;" >
       <% if @current_user.present? %>
-      <%= "You are logged in as #{@current_user.email}." %>
+      <%= "You are logged in as #{@current_user.email}" %>
         <%= link_to "log out", login_path, :method => 'delete'%>
       <% else %>
       <%= link_to 'Register', new_user_path %>
       <%= link_to 'Log In', login_path %>
        <% end %>
      </div>
-      <div class="header">
-        <%= image_tag "", :class => 'main-logo' %>
-      </div>
-    </header>
-     <!-- <div class="search" style="float:right;">
-       <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
-       <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
-       <%= submit_tag "Search" %>
-         <% if @recipes.present? %>
-             <% @recipes.each do |recipe| %>
-               <%= link_to recipe.name, recipe_path( recipe.id ) %>
-             <% end %>
-         <% else %>
-             <p>There are no posts containing the search term <%= params[:search] %>.</p>
-         <% end %>
-     <% end %>
-     </div> -->
-  <div class="row search" style="border:1px solid purple;">
-
-    <div id="custom-search-input" style="border:1px solid red;">
-       <%= form_tag(recipes_search_path, :method => "get", id: "search-form", :class => 'navbar-form navbar-left') do %>
-       <div class="input-group col-md-12" style="border:1px solid grey;">
-
-        <%= text_field_tag :search, params[:search], placeholder: "Search Recipes", :class => 'form-control input-md' %>
-
+     <div class="header main-logo">
+     </div>
+</header>
+ <div id="custom-search-input" class="row search">
+   <%= form_tag(recipes_search_path, :method => "get", id: "search-form", :class => 'navbar-form navbar-left') do %>
+     <div class="input-group col-md-12">
+    <%= text_field_tag :search, params[:search], placeholder: "Search Recipes", :class => 'form-control input-md' %>
         <span class="input-group-btn">
             <button class="btn btn-info btn-md">
                 <i class="glyphicon glyphicon-search"></i>
             </button>
-        </span>
-      </div>
-      <% end %>
+       </span>
     </div>
-
-
+      <% end %>
  </div>
 
- <div style="border:1px solid pink;">
-   <nav>
-      <%= link_to raw('<span class="glyphicon glyphicon-home" aria-hidden="true"></span>'), root_path('Home') %>
-    <!-- # <%= link_to 'Home', root_path %> -->
-    <%= link_to 'All Recipes', recipes_path,  :class =>'link'  %>
-  </nav>
-</div>
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
 
+      <!-- <a class="navbar-brand" href="#">Brand</a> -->
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><%= link_to raw('<span class="glyphicon glyphicon-home" aria-hidden="true"></span>'), root_path('Home'), :class => 'home' %></li>
+        <li><%= link_to 'Recipe Index', recipes_path,  :class =>'link' %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recipe Types <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to 'Beverages', categories_show_path(1), :class => 'link' %></li>
+            <li><%= link_to 'Canapes', categories_show_path(2), :class => 'link' %></li>
+            <li><%= link_to 'Breakfasts', categories_show_path(3), :class => 'link' %></li>
+            <li><%= link_to 'Entrees', categories_show_path(4), :class => 'link' %></li>
+            <li><%= link_to 'Mains', categories_show_path(5), :class => 'link' %></li>
+            <li><%= link_to 'Desserts', categories_show_path(6), :class => 'link' %></li>
+            <li><%= link_to 'Snacks', categories_show_path(7), :class => 'link' %></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to 'All Categories', categories_path, :class => 'link' %></li>
+          </ul>
+          <li><a href="#">link</a></li>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="container">
 
 <%= yield %>
 
+<footer>
+  <div class="footer">
+  </div>
+</footer>
 </div>
 </body>
 </html>

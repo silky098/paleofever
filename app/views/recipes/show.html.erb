@@ -1,4 +1,6 @@
-<h1><%=@recipe.name%></h1>
+<div class="body_heading_gap">
+  <h1><%=@recipe.name%></h1>
+</div>
 <nav>
     <%= link_to 'Add New Recipe', new_recipe_path,  :class =>'link'  %>  |
     <%= link_to 'Update Recipe', edit_recipe_path,  :class =>'link'  %> |
