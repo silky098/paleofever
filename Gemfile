@@ -27,6 +27,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt'
 gem 'cloudinary'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'rails_12factor'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

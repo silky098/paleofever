@@ -1,8 +1,11 @@
-@media (min-width: 768px){
-.navbar-form .input-group .form-control, .navbar-form .input-group .input-group-addon, .navbar-form .input-group .input-group-btn {
-    height: 46px;
-  }
-}
+// @media (min-width: 768px){
+// .navbar-form .input-group .form-control {
+//     height: 48px!important;
+//   }
+// }
+// input#search.form-control.input-lg {
+//   height: 48px!important;
+// }
 .container {
   margin-top: 10px;
 }
@@ -12,7 +15,7 @@
     background: url('/assets/paleo-fever-logo.png') center no-repeat;
 }
 body {
-    font-family: 'Arima Madurai', cursive;
+    font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
     color: #333;
