@@ -30,7 +30,7 @@
 </div>
 <div class="dropdown">
   <%= f.label :category_id %>
-  <%= f.select :category_id, Category.pluck( :recipe_type, :id), :prompt => 'Select Category', :class => 'form-control' %>
+  <%= f.select :category_id, Category.pluck( :recipe_type, :id), {:prompt => 'Select Category'}, {:class => 'form-control'} %>
 </div>
 
 <%= f.submit "Create Recipe", :class => 'btn btn-default' %>

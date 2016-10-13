@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Paleolife</title>
+  <title>Paleo Fever</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= cloudinary_js_config %>
@@ -9,25 +9,65 @@
   <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre|Arima+Madurai|Fredericka+the+Great|Maven+Pro|Open+Sans|Slabo+27px" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <div>
-    <nav>
-    <%= link_to 'Home', root_path %>
+  <div class="container" style="border:1px solid red;">
+    <header>
+      <div style="float:right; border:1px solid blue;">
+      <% if @current_user.present? %>
+      <%= "You are logged in as #{@current_user.email}." %>
+        <%= link_to "log out", login_path, :method => 'delete'%>
+      <% else %>
+      <%= link_to 'Register', new_user_path %>
+      <%= link_to 'Log In', login_path %>
+       <% end %>
+     </div>
+      <div class="header">
+        <%= image_tag "", :class => 'main-logo' %>
+      </div>
+    </header>
+     <!-- <div class="search" style="float:right;">
+       <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
+       <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
+       <%= submit_tag "Search" %>
+         <% if @recipes.present? %>
+             <% @recipes.each do |recipe| %>
+               <%= link_to recipe.name, recipe_path( recipe.id ) %>
+             <% end %>
+         <% else %>
+             <p>There are no posts containing the search term <%= params[:search] %>.</p>
+         <% end %>
+     <% end %>
+     </div> -->
+  <div class="row search" style="border:1px solid purple;">
+
+    <div id="custom-search-input" style="border:1px solid red;">
+       <%= form_tag(recipes_search_path, :method => "get", id: "search-form", :class => 'navbar-form navbar-left') do %>
+       <div class="input-group col-md-12" style="border:1px solid grey;">
+
+        <%= text_field_tag :search, params[:search], placeholder: "Search Recipes", :class => 'form-control input-lg' %>
+
+        <span class="input-group-btn">
+            <button class="btn btn-info btn-lg">
+                <i class="glyphicon glyphicon-search"></i>
+            </button>
+        </span>
+      </div>
+      <% end %>
+    </div>
+
+
+ </div>
+
+ <div style="border:1px solid pink;">
+   <nav>
+      <%= link_to raw('<span class="glyphicon glyphicon-home" aria-hidden="true"></span>'), root_path('Home') %>
+    <!-- # <%= link_to 'Home', root_path %> -->
+    <%= link_to 'All Recipes', recipes_path,  :class =>'link'  %>
   </nav>
 </div>
-  <div style="float:right;">
-  <% if @current_user.present? %>
-  <%= "You are logged in as #{@current_user.email}." %>
-    <%= link_to "log out", login_path, :method => 'delete'%>
-  <% else %>
-  <%= link_to 'Register', new_user_path %>
-  <%= link_to 'Log In', login_path %>
-   <% end %>
- </div>
- <nav>
-   <%= link_to 'All Recipes', recipes_path,  :class =>'link'  %>
- </nav>
+
+
 <%= yield %>
-  </div>
+
+</div>
 </body>
 </html>

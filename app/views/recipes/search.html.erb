@@ -1,0 +1,19 @@
+
+<% if @recipes.present? %>
+  <% @recipes.each do |recipe| %>
+  <div>
+    <p><%= link_to recipe.name, recipe_path( recipe.id ) %></p>
+    <p><%= link_to (cl_image_tag recipe.image, :class => 'thumb'), recipe_path( recipe.id ) %></p>
+    <p>Serves - <%= recipe.servings %></p>
+    <p>Preparation Time - <%= recipe.preparation_time %> mins</p>
+    <% if recipe.category.present? %>
+      <p>Category - <%= recipe.category.recipe_type %></p>
+      <% end %>
+
+    <p>_________________________  <p>
+      <br />
+  </div>
+  <% end %>
+<% else %>
+    <p>There are no posts containing the search term <%= params[:search] %>.</p>
+<% end %>

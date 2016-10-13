@@ -10,23 +10,27 @@
 <div>
   <p>Serves - <%= @recipe.servings %> ~ Preparation Time - <%= @recipe.preparation_time %> mins</p>
   <p><%= cl_image_tag(@recipe.image, :class =>'full_image') %></p>
-  <p>Ingredients - <%= @recipe.ingredients %> mins</p>
-  <p>Method - <%= @recipe.method %> mins</p>
+  <p>Ingredients - <%= @recipe.ingredients %></p>
+  <p>Method - <%= @recipe.method %></p>
 
-  <p>Tips - <%= @recipe.tips %> mins</p>
+  <p>Tips - <%= @recipe.tips %></p>
   <% if @recipe.category.present? %>
   <p>Category - <%= @recipe.category.recipe_type %></p>
   <% end %>
+
 </div>
-<% if @current_user.favourites.where(:recipe_id => @recipe.id).any? %>
+<% if @current_user.present? %>
+  <% if @current_user.favourites.where(:recipe_id => @recipe.id).any? %>
     <%= form_tag(favourite_path(@recipe.id), method: "delete") do %>
       <%= hidden_field_tag :recipe_id, @recipe.id %>
       <%= submit_tag "Unfavorite"%>
     <% end %>
-
   <% else %>
-<%= form_tag(favourites_path, method: "post") do %>
+   <%= form_tag(favourites_path, method: "post") do %>
     <%= hidden_field_tag :recipe_id, @recipe.id %>
     <%= submit_tag "Favorite"%>
+   <% end %>
   <% end %>
+<% else %>
+  <%= link_to @recipe.name, recipe_path( @recipe.id ) %>
 <% end %>

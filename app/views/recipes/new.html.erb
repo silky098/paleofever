@@ -1,4 +1,10 @@
 <h1>Add a New Recipe</h1>
 <p>Fill out this form to add a recipe</p>
 
+<% unless flash[:error].nil? %>
+ <div class="alert alert-danger">
+     <%= flash[:error] %>
+ </div>
+ 
+<% end %>
 <%= render :partial => 'form' %>

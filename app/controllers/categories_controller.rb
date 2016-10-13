@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.all
+    @categories = Category.all.by_name
   end
 
   def show
@@ -12,6 +12,6 @@ class CategoriesController < ApplicationController
 
   private
     def category_params
-      params.require(:category).permit(:recipe_type)
+      params.require(:category).permit(:category_id, :recipe_type)
     end
 end

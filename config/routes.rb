@@ -10,13 +10,16 @@
 #
 
 Rails.application.routes.draw do
-  
+
 
   root :to => 'pages#home'
+
+  get '/recipes/search' => 'recipes#search'
 
   resources :recipes
   resources :users, :only => [:new, :create]
   resources :favourites
+
 
     get '/login' => 'session#new'
     post '/login' => 'session#create'

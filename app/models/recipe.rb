@@ -23,7 +23,6 @@ class Recipe < ActiveRecord::Base
   has_many :favourites
 
   def self.search(search)
-    where("name ILIKE ?", "%#{search}%")
-    where("ingredients ILIKE ?", "%#{search}%")
+    where("name ILIKE ? OR ingredients ILIKE ?", "%#{search}%", "%#{search}%")
   end
 end

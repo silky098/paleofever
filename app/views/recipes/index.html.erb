@@ -24,7 +24,10 @@
   <p><%= link_to (cl_image_tag recipe.image, :class => 'thumb'), recipe_path( recipe.id ) %></p>
   <p>Serves - <%= recipe.servings %></p>
   <p>Preparation Time - <%= recipe.preparation_time %> mins</p>
-  <p class="category"><%= recipe.category.recipe_type %></p>
+  <% if recipe.category.present? %>
+    <p>Category - <%= recipe.category.recipe_type %></p>
+    <% end %>
+
   <p>_________________________  <p>
     <br />
 </div>
