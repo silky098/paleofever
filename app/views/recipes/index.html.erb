@@ -9,7 +9,7 @@
 </ul> -->
 
 <% @recipes.each do |recipe| %>
-<div class="col-md-3">
+<div class="col-md-4">
   <p><%= link_to recipe.name, recipe_path( recipe.id ) %></p>
   <p><%= link_to (cl_image_tag recipe.image, :class => 'thumb'), recipe_path( recipe.id ) %></p>
   <p>Serves - <%= recipe.servings %></p>
