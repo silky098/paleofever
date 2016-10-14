@@ -13,13 +13,17 @@
 
 <div>
   <p>Serves - <%= @recipe.servings %> ~ Preparation Time - <%= @recipe.preparation_time %> mins</p>
+  <br />
   <p><%= cl_image_tag(@recipe.image, :class =>'full_image') %></p>
-  <p>Ingredients - <%= @recipe.ingredients %></p>
-  <p>Method - <%= @recipe.method %></p>
-
-  <p>Tips - <%= @recipe.tips %></p>
+  <br />
+  <p><i>Ingredients</i> - <%= @recipe.ingredients %></p>
+  <br />
+  <p><i>Method</i> - <%= @recipe.method %></p>
+  <br />
+  <p><i>Tips</i> - <%= @recipe.tips %></p>
+  <br />
   <% if @recipe.category.present? %>
-  <p>Category - <%= @recipe.category.recipe_type %></p>
+  <p><i>Category</i> - <%= @recipe.category.recipe_type %></p>
   <% end %>
 
 </div>
