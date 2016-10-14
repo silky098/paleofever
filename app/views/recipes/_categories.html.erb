@@ -1,4 +1,5 @@
 <%= link_to 'All', categories_path %>
+
 <% @categories.each do |cat| %>
      <%= link_to cat.recipe_type, categories_show_path(cat.id)	%>
 <% end %>

@@ -2,9 +2,10 @@
   <h1><%= @category.recipe_type %></h1>
 </div>
 
-<%= render :partial => 'categories' %>
-
 <% @recipes.each do |recipe| %>
-<hr>
-  <p><%= link_to recipe.name, recipe_path( recipe.id ) %> <%= cl_image_tag recipe.image, :class =>'thumb' %></p>
+  <div class="col-md-4 recipe_index">
+  <%= link_to recipe.name, recipe_path( recipe.id ) %>
+  <%= cl_image_tag recipe.image, :class =>'thumb' %>
+  <br />
+  </div>
 <% end %>

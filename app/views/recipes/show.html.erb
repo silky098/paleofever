@@ -1,13 +1,14 @@
 <div class="body_heading_gap">
   <h1><%=@recipe.name%></h1>
 </div>
-<div class="update_bar">
-<%= link_to 'Add New Recipe', new_recipe_path,  :class =>'link'  %>
-  |
-<%= link_to 'Update Recipe', edit_recipe_path,  :class =>'link'  %>
-  |
-<%= link_to 'Delete Recipe', recipe_path, :method => 'delete', :class =>'link'  %>
-</div>
+
+  <nav aria-label="update">
+<ul class="pagination">
+  <li><%= link_to 'New Recipe', new_recipe_path,  :class =>'link update_bar'  %></li>
+  <li><%= link_to 'Update Recipe', edit_recipe_path,  :class =>'link update_bar'  %></li>
+  <li><%= link_to 'Delete Recipe', recipe_path, :method => 'delete', :class =>'link update_bar'  %></li>
+</ul>
+</nav>
 
 <div>
   <p>Serves - <%= @recipe.servings %> ~ Preparation Time - <%= @recipe.preparation_time %> mins</p>

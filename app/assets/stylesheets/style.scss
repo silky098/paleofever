@@ -7,7 +7,7 @@
 //   height: 48px!important;
 // }
 .container {
-  padding-top: 10px;
+  padding: 30px 0;
 }
 .container-fluid {
     background-color: #ddd;
@@ -48,25 +48,46 @@ h2, h3, h4 {
   font-family: 'Arima Madurai', cursive;
 }
 .footer {
-  width: 100%;
   display: block;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  background: #ccc;
+  height: 130px;
 }
 .catagory_pills{
   text-transform: uppercase;
   display: block;
-  float: none;
   width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   margin: 35px auto;
 }
 .cat_pills{
-  background-color: #e9eaea;
+  background-color: #f0fcf7;
   margin: 10px;
 }
 .update_bar{
-  width: 100%;
-  margin: 25px auto;
   font-family: 'Arima Madurai', cursive;
   font-size: 16px;
+}
+.pagination>li>a, .pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #0c9108;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover {
+    z-index: 2;
+    color: #0b8407;
+    background-color: #eee;
+    border-color: #ddd;
 }
 .body_heading_gap {
   text-align: center;
@@ -113,6 +134,9 @@ a:focus, a:hover {
 a.link.active {
   background: #d1f2ef;
 }
+.navbar-default .navbar-nav>li>a {
+    color: #3f3f3f;
+}
 .nav>li>a:focus, .nav>li>a:hover {
     text-decoration: none;
     background-color: #d1f2ef;
@@ -123,9 +147,6 @@ a.link.active {
 }
 .home_img {
   max-width: 100%;
-}
-.footer {
-  height: 100px;
 }
 // .cloudinary-fileupload {
 //    height: 30px;

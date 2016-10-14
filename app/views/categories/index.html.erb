@@ -2,13 +2,11 @@
   <h1>Recipe Categories Index</h1>
 </div>
 
-<%= render :partial => 'categories' %>
-
 <% @categories.each do |cat| %>
 
   <h2><%= cat.recipe_type %> </h2>
-  <hr>
-    <% cat.recipes.each do |recipe| %>
-       <p><%= link_to recipe.name, recipe_path( recipe.id ) %></p>
-    <% end %>
-<% end %>
+  <!-- <hr> -->
+      <% cat.recipes.each do |recipe| %>
+       <%= link_to recipe.name, recipe_path( recipe.id ) %>
+       <% end %>
+  <% end %>

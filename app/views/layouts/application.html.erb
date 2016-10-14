@@ -68,7 +68,7 @@
             <li><%= link_to 'All Categories', categories_path, :class => 'link' %></li>
           </ul>
           <li><%= link_to 'Add New Recipe', new_recipe_path,  :class =>'link'  %></li>
-          
+
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -77,9 +77,9 @@
 <div class="container">
 
 <%= yield %>
-
+</div>
 <footer>
-  <div class="footer">
+  <div class="footer col-md-1">
     <div class="catagory_pills">
       <ul class="nav nav-pills">
       <li><%= link_to 'Beverages', categories_show_path(1), :role => 'presentation', :class => 'active cat_pills' %></li>
@@ -94,6 +94,5 @@
     </div>
   </div>
 </footer>
-</div>
 </body>
 </html>
