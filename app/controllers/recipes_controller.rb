@@ -63,11 +63,13 @@ end
 
   def destroy
     recipe = Recipe.find params[:id]
-    if recipe.user.id == @current_user.id
+    if recipe.user_id == @current_user.id
     recipe.destroy
-    end
-    redirect_to recipes_path  
+    redirect_to recipes_path
+  else
+    redirect_to recipes_path
   end
+end
 
   private
     def recipe_params

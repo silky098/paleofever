@@ -1,8 +1,9 @@
+<div class="recipe_content">
 <div class="body_heading_gap">
   <h1><%=@recipe.name%></h1>
 </div>
 
-  <nav aria-label="update">
+<nav aria-label="update">
 <ul class="pagination">
   <li><%= link_to 'New Recipe', new_recipe_path,  :class =>'link update_bar'  %></li>
   <li><%= link_to 'Update Recipe', edit_recipe_path,  :class =>'link update_bar'  %></li>
@@ -37,3 +38,4 @@
 <% else %>
   <%= link_to @recipe.name, recipe_path( @recipe.id ) %>
 <% end %>
+</div>
